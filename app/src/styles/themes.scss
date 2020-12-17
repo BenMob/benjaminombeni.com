@@ -1,0 +1,27 @@
+.light{
+    --text-color : #212426;
+    --page-bg-color: #f7f7f7;
+    --bg-color: #3dc8ff;
+}
+
+.dark{
+    --text-color: #f7f7f7;
+    --page-bg-color: #222a2e;
+    --bg-color: #3dc8ff;
+}
+
+
+.globals{
+    /*Colors*/
+    --black: #222a2e;
+    --white: #f7f7f7;
+    --blue: #3dc8ff;
+
+    /*Sizes*/
+    --sm: 3px;
+    --md: 5px;
+    --lg: 10px;
+    --xl: 20px;
+    --xxl: 30px;
+    --round: 50%;
+}
