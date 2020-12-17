@@ -1,0 +1,15 @@
+.main-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif; /*https://fonts.google.com/specimen/Nunito?sidebar.open=true&selection.family=Nunito*/
+    background: var(--page-bg-color);
+    color: var(--text-color);
+}
+
+.hello{
+    padding: var(--lg);
+    border-radius: var(--md);
+    background: var(--bg-color);
+}
