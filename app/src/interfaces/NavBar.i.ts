@@ -1,14 +1,17 @@
 /**
  * NavBar Interface
  */
-import  NavItem  from './NavItem.i'
+import   { NavItemInfo } from './NavItem.i'
 
-interface NavBar{
-     initials: string;
-     about: NavItem;
-     work: NavItem;
-     communities: NavItem;
-     favorites: NavItem
+export interface NavBarInfo{
+    initials: NavItemInfo;
+    home: NavItemInfo;
+    work: NavItemInfo;
+    interests: NavItemInfo;
+    resume: NavItemInfo;
  }
 
-export default NavBar;
+export interface ThemeInfo{
+    theme: string,
+    setTheme: Function
+}

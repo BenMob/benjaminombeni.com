@@ -1,21 +1,26 @@
 .light{
     --text-color : #212426;
-    --page-bg-color: #f7f7f7;
+    --page-bg-color: #aaaaa;
     --bg-color: #3dc8ff;
+    --navbar-shadow-color: none;
+    --navbar-border-bottom: #212426; 
 }
 
 .dark{
     --text-color: #f7f7f7;
     --page-bg-color: #222a2e;
     --bg-color: #3dc8ff;
+    --navbar-shadow-color: #000000;
+    --navbar-border-bottom: #3dc8ff; 
 }
 
 
 .globals{
     /*Colors*/
-    --black: #222a2e;
+    --black: #000000;
+    --dark-blue: #222a2e;
     --white: #f7f7f7;
-    --blue: #3dc8ff;
+    --light-blue: #3dc8ff;
 
     /*Sizes*/
     --sm: 3px;

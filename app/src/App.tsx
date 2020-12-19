@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import './styles/themes.scss';
 import './styles/styles.scss';
-import {toggleTheme, getTheme} from './styles/ThemeProvider'
-
+import Navbar from './components/NavBar';
+import {getTheme} from './styles/ThemeProvider'
 
 function App() {
-  const [theme, setTheme] = useState(getTheme())
-
+  const [theme, setTheme] = useState(getTheme); // sets the theme
   return (
     <div className={`main-container ${theme} globals`}>
-      <button className='hello'  onClick={() => toggleTheme(theme, setTheme)} >Toggle</button>
+      <Navbar theme={theme} setTheme={setTheme} />
     </div>
   )
 }

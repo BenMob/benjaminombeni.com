@@ -2,8 +2,7 @@
  * Nav Item Interface
  */
 
- interface NavItem {
+ export interface NavItemInfo {
      name: string;
      link: string;
  }
- export default NavItem;
