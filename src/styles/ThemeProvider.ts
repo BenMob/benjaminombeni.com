@@ -16,7 +16,7 @@ const saveTheme = (theme:string): void => {
 // Gets the current theme from local storage
 const getTheme = (): string => {
     const theme: string | null = localStorage.getItem("theme");
-    return theme === null ? themes.LIGHT: theme;
+    return theme === null ? themes.DARK : theme;
 }   
 
 // Theme Toggler
