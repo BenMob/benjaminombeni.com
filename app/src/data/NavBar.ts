@@ -1,25 +1,27 @@
-import {NavBarInfo} from '../interfaces/NavBar.i'
+import { NavBarInfo } from '../interfaces/NavBar.i'
+import homepageImage from './media/profile.png'
+
 
 let navbar: NavBarInfo = {
     initials : {
-        name:"Benjamin Ombeni",
-        link:"#"
+        name:"BO",
+        link: homepageImage
     },
     home: {
         name: "Home",
-        link: "#"
+        link: "/"
     },
     work: {
         name : "Work",
-        link: "#"
+        link: "/work"
     },
     interests : {
         name: "Interests",
-        link: "#"
+        link: "/interests"
     },
     resume : {
         name: "Resume",
-        link: "#"
+        link: ""
     }
     
 }

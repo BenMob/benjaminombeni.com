@@ -1,12 +1,23 @@
 import React from 'react'
-import { NavItemInfo } from '../interfaces/NavItem.i'
+import { Link }from 'react-router-dom'
 import '../styles/styles.scss'
 
-function NavItem({name, link}: NavItemInfo){
+// Alternative solution for NavItemInfo
+// TODO: Figure out a way to use the NavItemInfo interface instead.
+interface NavItemInfoWithAnimation{
+    name: string,
+    link: string,
+    animation: Function
+}
+
+
+function NavItem({name, link, animation}: NavItemInfoWithAnimation){
     return (
-        <div className="nav-item">
-            <div className="pointer">{name}</div>
-        </div>
+        <Link to={link} onClick={() => animation()} >
+            <div className="nav-item">
+                <div className="pointer">{name}</div>
+            </div>
+        </Link>
     )
 
 }

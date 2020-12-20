@@ -46,6 +46,7 @@
 
 .nav-item{
     margin: var(--lg);
+    color: var(--text-color);
 }
 
 .nav-item:hover{
@@ -81,15 +82,31 @@
     height: var(--xl);
 }
 
-/*
-.nav-item:focus{
-    color: var(--light-blue);
+.portrait{
+    border-radius: 50%;
+    width: 10px;
+    border: solid 2px var(--navbar-border-bottom);
+    box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
+    animation: expand_portrait 0.5s 1  normal forwards ease-in;  // name time func delay iteration dir fill play
 }
 
-.nav-item:target{
-    color: var(--light-blue);
+@keyframes expand_portrait {
+    from{
+        width: 10px;
+    }
+
+    to{
+        width: 150px;
+    }
 }
-*/
+/************** Page Route Styles *************/
+.home-wrapper{      // Wraps the content of the Home page
+    height: 59vh;  
+}
+
+.section-wrapper{  // Wraps the content of each page except for Home Page
+    height: 92vh;
+}
 
 
 /************** FlexBox Layout ***************/
@@ -112,7 +129,9 @@
 }
 
 
+
 /* CSS Utils */
 .pointer{
     cursor: pointer;
 }
+
