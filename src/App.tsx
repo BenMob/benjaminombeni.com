@@ -11,16 +11,18 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 function App() { 
   const [theme, setTheme] = useState(getTheme); // sets the theme
   return (
-    <Router>
-      <div className={`main-container ${theme} globals`}>
-        <Navbar theme={theme} setTheme={setTheme} />
-        <Switch>
-          <Route path='/' component={Home} exact />
-          <Route path='/work' component={Work} />
-          <Route path='/interests' component={Interests} />
-        </Switch>
-      </div>
-    </Router>
+    
+      <Router>
+        <div className={`main-container ${theme} globals`}>
+          <Navbar theme={theme} setTheme={setTheme} />
+          <Switch>
+            <Route path='/' component={Home} exact />
+            <Route path='/work' component={Work} />
+            <Route path='/interests' component={Interests} />
+          </Switch>
+        </div>
+      </Router>
+   
   )
 }
 

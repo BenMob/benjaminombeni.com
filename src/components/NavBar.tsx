@@ -3,15 +3,20 @@ import ThemeToggler from './ThemeToggler'
 import navbar from '../data/NavBar'
 import NavItem from './NavItem'
 import { ThemeInfo } from '../interfaces/NavBar.i'
+import { FaBars } from  "react-icons/fa"
 
 const expanded = "navigation-bar-expanded" // Represents the CSS class containing the animation that expands the navigation bar.
 const shrunk = "navigation-bar-shrunk"     // Represents the CSS class containing the animation that shrinks the navigation bar.
+const show_side_nav = "show-side-nav"      // Represents the CSS class containing the animation that slides the sidebar in from the left.
+const hide_side_nav = "hide-side-nav"      // Represents the CSS class containing the animation that slides the sidebar out to the left.
+  
 
 function Navbar({theme, setTheme}: ThemeInfo){
-    const [navState, setNavState] = useState(expanded)
-
+    const [navState, setNavState] = useState<string>(expanded)               // Controls the state of the navbar on all screens.
+    const [sideBarState, setSideBarSate] = useState<string>(hide_side_nav)   // Controls the state of the sidenav on small screens only.
+   
     // Changes the state of the navigation bar from expanded to shrunk. 
-    const shrink = () => {
+    const shrink = ():void => {
         if(navState === shrunk){
             return;
         }else{
@@ -20,11 +25,20 @@ function Navbar({theme, setTheme}: ThemeInfo){
     }
 
     // Changes the state of the navigation bar from shrunk to expanded.
-    const expand = () => {
+    const expand = ():void => {
         if(navState === expanded){
             return
         }else{
             setNavState(expanded)
+        }
+    }
+
+    // Toggles the sidebar from visible to invisible and vice versa
+    const toggleSideBar = ():void => {
+        if(sideBarState === hide_side_nav){
+            setSideBarSate(show_side_nav)
+        }else{
+            setSideBarSate(hide_side_nav)
         }
     }
 
@@ -39,13 +53,14 @@ function Navbar({theme, setTheme}: ThemeInfo){
     }
 
     return(
-        <div className={`${navState} flex-space-around`}>
+        <div className={`${navState}`}>
             <div>
                 {navState === expanded && portrait(navbar.initials.link)}
-                {navState === shrunk && initials(navbar.initials.name) }
+                {navState === shrunk && initials(navbar.initials.name)}
             </div>
             <div className="flex-space-between">
-                <div className="flex-space-around">
+                <FaBars className="humberger pointer" onClick={toggleSideBar} />
+                <div className={`nav-items ${sideBarState} wrap`}>
                     <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} />
                     <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} />
                     <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} />

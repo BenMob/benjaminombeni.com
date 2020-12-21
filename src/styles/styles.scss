@@ -1,8 +1,17 @@
+
 .main-container{
     min-height: 100vh;
+    width: 100%;
     font-family: 'Nunito', sans-serif; /*https://fonts.google.com/specimen/Nunito?sidebar.open=true&selection.family=Nunito*/
     background: var(--page-bg-color);
     color: var(--text-color);
+}
+
+/* nav-items-container */
+.nav-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* Expanded Navigation bar*/
@@ -11,7 +20,10 @@
     position: sticky;
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
     height: 40vh;
-    animation: expand_navigation_bar 0.5s 1 normal forwards ease-in;
+    animation: expand_navigation_bar 0.5s 1 normal forwards ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /*  Shrink navigation bar*/
@@ -20,9 +32,11 @@
     position: sticky;
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
     height: 7vh;
-    animation: shrink_navigation_bar 0.5s 1 normal forwards ease-out;
+    animation: shrink_navigation_bar 0.5s 1 normal forwards;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-
 
 /* Animation that expands the navigation bar*/
 @keyframes expand_navigation_bar{
@@ -51,9 +65,20 @@
 
 .nav-item:hover{
     color: var(--light-blue);
+    border-bottom: solid 2px var(--light-blue);
 }
 .nav-item:active{
     color: var(--light-blue);
+}
+
+.humberger{
+   display: none;
+   position: absolute;
+   left: 0;
+   top: 0;
+   margin: var(--lg);
+   color: var(--navbar-border-bottom);
+   font-size: var(--xl);
 }
 
 .theme-toggler{
@@ -101,11 +126,11 @@
 }
 /************** Page Route Styles *************/
 .home-wrapper{      // Wraps the content of the Home page
-    height: 59vh;  
+    min-height: 59vh;  
 }
 
 .section-wrapper{  // Wraps the content of each page except for Home Page
-    height: 92vh;
+    min-height: 92vh;
 }
 
 
@@ -128,10 +153,101 @@
     align-items: center;
 }
 
+.flex-column-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 
 /* CSS Utils */
 .pointer{
     cursor: pointer;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+/****************************************************** Styles For Mobile Devices ******************************/
+// MediaQueries:  Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+    .nav-items{
+        flex-direction: column;
+        align-items: flex-start;
+        border-right: solid 2px var(--navbar-border-bottom);
+        position: absolute;
+        top: 7vh;
+        left: -100px;
+        background-color: var(--page-bg-color);
+        padding: var(--md);
+        height: 32vh;
+    }
+
+    .humberger{
+        display: block;
+    }
+
+    @keyframes slide_in_from_left{
+        from{
+            left: -100px;
+        }
+        to{
+            left: 0;
+        }
+    }
+
+    @keyframes slide_out_from_left{
+        from{
+            left: 0;
+        }
+        to{
+            left: -100;
+        }
+    }
+
+    .show-side-nav{
+        animation: slide_in_from_left 0.5s 1 normal forwards ease;
+    }
+    
+    .hide-side-nav{
+        animation: slide_out_from_left 0.5s 1 normal forwards ease;
+    }
+
+
+    .portrait{
+        border-radius: 50%;
+        width: 20px;
+        border: solid 2px var(--navbar-border-bottom);
+        box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
+       
+    }
+
+    /* Expanded Navigation bar*/
+    .navigation-bar-expanded{
+        position: sticky;
+        box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
+        height: 7vh;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /*  Shrink navigation bar*/
+    .navigation-bar-shrunk{
+        border-bottom: 2px solid var(--navbar-border-bottom);
+        position: sticky;
+        box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
+        height: 7vh;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
