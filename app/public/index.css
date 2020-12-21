@@ -13,3 +13,8 @@ button{
     cursor: pointer;
     border: none;
 }
+
+body{
+   min-height: 100vh;
+}
+
