@@ -1,3 +1,25 @@
+/************ Removing ddefault CSS *********************/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button{
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+body{
+   min-height: 100vh;
+}
+
+/********************** General App Styleing STarts Here **********************/
 
 .main-container{
     min-height: 100vh;
