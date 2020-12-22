@@ -60,7 +60,7 @@ function Navbar({theme, setTheme}: ThemeInfo){
             </div>
             <div className="flex-space-between">
                 <FaBars className="humberger pointer" onClick={toggleSideBar} />
-                <div className={`nav-items ${sideBarState} wrap`}>
+                <div className={`nav-items ${sideBarState}`}>
                     <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} />
                     <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} />
                     <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} />
