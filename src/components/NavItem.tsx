@@ -15,7 +15,7 @@ function NavItem({name, link, animation}: NavItemInfoWithAnimation){
     return (
         <Link to={link} onClick={() => animation()} >
             <div className="nav-item">
-                <div className="pointer">{name}</div>
+                <div className="pointer bottom-border-onhover">{name}</div>
             </div>
         </Link>
     )

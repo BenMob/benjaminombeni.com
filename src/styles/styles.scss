@@ -7,7 +7,9 @@
 a{
     text-decoration: none;
     cursor: pointer;
+    color: inherit;
 }
+
 
 button{
     text-decoration: none;
@@ -60,6 +62,11 @@ body{
     align-items: center;
 }
 
+.laptop{
+    font-size: 100px;
+}
+
+
 /* Animation that expands the navigation bar*/
 @keyframes expand_navigation_bar{
     from{
@@ -85,10 +92,6 @@ body{
     color: var(--text-color);
 }
 
-.nav-item:hover{
-    color: var(--light-blue);
-    border-bottom: solid 2px var(--light-blue);
-}
 .nav-item:active{
     color: var(--light-blue);
 }
@@ -100,7 +103,7 @@ body{
    top: 0;
    margin: var(--lg);
    color: var(--navbar-border-bottom);
-   font-size: var(--xl);
+   font-size: var(--xxl);
 }
 
 .theme-toggler{
@@ -130,25 +133,29 @@ body{
 }
 
 .portrait{
+    visibility: hidden;
     border-radius: 50%;
-    width: 10px;
+    width: 100px;
     border: solid 2px var(--navbar-border-bottom);
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
-    animation: expand_portrait 0.5s 1  normal forwards ease-in;  // name time func delay iteration dir fill play
+    animation: expand_portrait 0.5s 0.2s 1  normal forwards ease-in;  // name time func delay iteration dir fill play
 }
 
 @keyframes expand_portrait {
     from{
-        width: 10px;
+        visibility: hidden;
+
     }
 
     to{
-        width: 150px;
+        visibility: visible;
     }
 }
 /************** Page Route Styles *************/
 .home-wrapper{      // Wraps the content of the Home page
     min-height: 59vh;  
+    background: linear-gradient(var(--black),var(--page-bg-color));
+    display: flex;
 }
 
 .section-wrapper{  // Wraps the content of each page except for Home Page
@@ -156,11 +163,35 @@ body{
 }
 
 
+.media-icon{
+    margin-right: var(--xl);
+    border: solid 2px transparent;
+}
+
+.media-icon:hover{ 
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
+}
+
 /************** FlexBox Layout ***************/
+
+.flex-center-width{
+    display: flex;
+    justify-content: center;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.flex-center-height{
+    display: flex;
+    align-items: center;
+}
+
 .flex-space-around{
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 .flex-center{
@@ -172,13 +203,18 @@ body{
 .flex-space-between{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .flex-column-center{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.flex-column-center-width{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -199,6 +235,18 @@ body{
 .wrap{
     flex-wrap: wrap;
 }
+
+.bottom-border-onhover{
+    border-bottom: solid 2px transparent;
+}
+
+.bottom-border-onhover:hover{
+    border-bottom: solid 2px var(--navbar-border-bottom);
+}
+
+
+
+
 /****************************************************** Styles For Mobile Devices ******************************/
 // MediaQueries:  Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
@@ -247,7 +295,7 @@ body{
 
     .portrait{
         border-radius: 50%;
-        width: 20px;
+        width: 100px;
         border: solid 2px var(--navbar-border-bottom);
         box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
        
@@ -270,6 +318,18 @@ body{
         height: 7vh;
         justify-content: center;
         align-items: center;
+    }
+
+    .home-wrapper{      // Wraps the content of the Home page
+        min-height: 59vh;  
+        background: linear-gradient(var(--black),var(--page-bg-color));
+        display: flex;
+        flex-direction: column;
+        background: none;
+    }
+
+    .home-about {
+        text-align: center;
     }
 }
 
