@@ -16,6 +16,7 @@ function App() {
         <div className={`main-container ${theme} globals`}>
           <Navbar theme={theme} setTheme={setTheme} />
           <Switch>
+            <Route path='/benjaminombeni.com' component={Home} exact />
             <Route path='/' component={Home} exact />
             <Route path='/work' component={Work} />
             <Route path='/interests' component={Interests} />
