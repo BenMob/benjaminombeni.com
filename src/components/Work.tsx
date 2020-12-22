@@ -1,9 +1,10 @@
 import React from 'react'
+import Projects from './Projects'
 
 function Work() {
     return (
-        <div className='section-wrapper flex-center'>
-            <h1>Work</h1>
+        <div className='section-wrapper flex-center-width'>
+            <Projects />
         </div>
     )
 }

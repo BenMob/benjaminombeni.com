@@ -10,7 +10,6 @@ interface NavItemInfoWithAnimation{
     animation: Function
 }
 
-
 function NavItem({name, link, animation}: NavItemInfoWithAnimation){
     return (
         <Link to={link} onClick={() => animation()} >

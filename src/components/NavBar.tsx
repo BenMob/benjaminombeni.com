@@ -3,14 +3,13 @@ import ThemeToggler from './ThemeToggler'
 import navbar from '../data/NavBar'
 import NavItem from './NavItem'
 import { ThemeInfo } from '../interfaces/NavBar.i'
-import { FaBars } from  "react-icons/fa"
+import { MdDehaze } from "react-icons/md"
 
 const expanded = "navigation-bar-expanded" // Represents the CSS class containing the animation that expands the navigation bar.
 const shrunk = "navigation-bar-shrunk"     // Represents the CSS class containing the animation that shrinks the navigation bar.
 const show_side_nav = "show-side-nav"      // Represents the CSS class containing the animation that slides the sidebar in from the left.
 const hide_side_nav = "hide-side-nav"      // Represents the CSS class containing the animation that slides the sidebar out to the left.
   
-
 function Navbar({theme, setTheme}: ThemeInfo){
     const [navState, setNavState] = useState<string>(expanded)               // Controls the state of the navbar on all screens.
     const [sideBarState, setSideBarSate] = useState<string>(hide_side_nav)   // Controls the state of the sidenav on small screens only.
@@ -59,7 +58,7 @@ function Navbar({theme, setTheme}: ThemeInfo){
                 {navState === shrunk && initials(navbar.initials.name)}
             </div>
             <div className="flex-space-between">
-                <FaBars className="humberger pointer" onClick={toggleSideBar} />
+                <MdDehaze className="humberger pointer" onClick={toggleSideBar} />
                 <div className={`nav-items ${sideBarState}`}>
                     <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} />
                     <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} />

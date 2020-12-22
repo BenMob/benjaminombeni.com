@@ -1,7 +1,7 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
-
-
+import navbar from '../data/NavBar';
+import { Link } from 'react-router-dom';
 
 function Home(): JSX.Element {
     return (
@@ -17,8 +17,11 @@ function Home(): JSX.Element {
                 </div>
             </div>
             <div className="flex-center flex-1">
+        
                 <small>My Projects - </small>
-                <div className="laptop pointer">&#128187;</div>
+                <Link to={navbar.work.link}>
+                    <div className="laptop pointer">&#128187;</div>
+                </Link>
             </div>
         </div>
     )
