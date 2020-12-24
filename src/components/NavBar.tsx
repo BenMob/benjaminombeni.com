@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import ThemeToggler from './ThemeToggler'
-import navbar from '../data/NavBar'
-import NavItem from './NavItem'
-import { ThemeInfo } from '../interfaces/NavBar.i'
+import ThemeToggler from "./ThemeToggler"
+import navbar from "../data/NavBar"
+import NavItem from "./NavItem"
+import { ThemeInfo } from  "../interfaces/NavBar.i"
 import { MdDehaze } from "react-icons/md"
+// import { useLocation } from "react-router-dom"
 
 const expanded = "navigation-bar-expanded" // Represents the CSS class containing the animation that expands the navigation bar.
 const shrunk = "navigation-bar-shrunk"     // Represents the CSS class containing the animation that shrinks the navigation bar.
@@ -47,7 +48,7 @@ function Navbar({theme, setTheme}: ThemeInfo){
     }
 
     // Renders Benjamin's initials
-    const initials = (name: string): JSX.Element =>{
+    const initials = (name: string): JSX.Element => {
         return <h2>{name}</h2>
     }
 

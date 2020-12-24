@@ -2,7 +2,7 @@ import { NavBarInfo } from '../interfaces/NavBar.i'
 import homepageImage from './media/profile.png'
 
 
-let navbar: NavBarInfo = {
+const navbar: NavBarInfo = {
     initials : {
         name:"BO",
         link: homepageImage

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './styles/themes.scss';
 import './styles/styles.scss';
 import Navbar from './components/NavBar';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Home from './components/Home';
 import Work from './components/Work';
 import Interests from './components/Interests';
@@ -22,10 +22,8 @@ function App() {
             <Route path='/work' component={Work} />
             <Route path='/interests' component={Interests} />
           </Switch>
-          <Footer />
         </div>
       </Router>
-   
   )
 }
 

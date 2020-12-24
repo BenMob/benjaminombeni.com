@@ -19,6 +19,7 @@ button{
 
 body{
    min-height: 100vh;
+   background-color: #222a2e;
 }
 
 /* width */
@@ -53,6 +54,8 @@ body{
     font-family: 'Nunito', sans-serif; /*https://fonts.google.com/specimen/Nunito?sidebar.open=true&selection.family=Nunito*/
     background: var(--page-bg-color);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
 }
 
 /* nav-items-container */
@@ -175,22 +178,16 @@ body{
         visibility: visible;
     }
 }
-/************** Page Route Styles *************/
+/************** Home Styling *************/
 .home-wrapper{      // Wraps the content of the Home page
     min-height: 59vh;  
-    background: linear-gradient(var(--black),var(--page-bg-color));
-    display: flex;
+    // background: linear-gradient(var(--black),var(--page-bg-color));
+    display: flex;  
 }
 
 .section-wrapper{  // Wraps the content of each page except for Home Page
     min-height: 92vh;
 }
-
-.projects-list{
-    border: solid 1px white;
-    width: 70%;
-}
-
 
 .media-icon{
     margin-right: var(--xl);
@@ -202,7 +199,7 @@ body{
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
 }
 
-/************** FlexBox Layout ***************/
+/**************************** FlexBox Layout ******************************/
 
 .flex-center-width{
     display: flex;
@@ -271,6 +268,65 @@ body{
 
 .bottom-border-onhover:hover{
     border-bottom: solid 2px var(--navbar-border-bottom);
+}
+
+/****************************** Projects Section *****************************/
+.projects-wrapper{
+    padding-top: var(--xxl);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-list{
+    width: 100%;
+    margin: var(--lg);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-container{
+    box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
+    border: solid 2px gray;
+    border-radius: var(--md);
+    margin: var(--md);
+    padding: var(--md);
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.project-header{
+    border-bottom: solid 2px gray;
+    padding: var(--md);
+}
+
+.project-description{
+    padding: var(--md);
+}
+
+.project-links{
+    display:flex;
+    justify-content: space-around;
+    padding: var(--md);
+}
+
+.project-tools{
+    padding: var(--md);
+}
+
+.category{
+    color: gray;
+    padding: var(--md);
+}
+
+.project-link-icon{
+    font-size: x-large;
+    border-bottom: solid 2px transparent;
+}
+
+.project-link-icon:hover{
+   border-bottom: solid 2px var(--navbar-border-bottom);
 }
 
 .footer{
@@ -366,5 +422,12 @@ body{
     .home-about {
         text-align: center;
     }
+}
+
+ @media (max-width: 416px){
+        .project-container{
+            min-width: none;
+            max-width: none;
+        }
 }
 
