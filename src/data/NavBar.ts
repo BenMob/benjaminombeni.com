@@ -1,5 +1,5 @@
 import { NavBarInfo, PathDetector } from '../interfaces/NavBar.i'
-import homepageImage from './media/profile.png'
+import homepageImage from '../docs/profile.png'
 
 
 export const navbar: NavBarInfo = {
@@ -21,7 +21,7 @@ export const navbar: NavBarInfo = {
     },
     resume : {
         name: "Resume",
-        link: ""
+        link: "/resume"
     }  
 }
 
