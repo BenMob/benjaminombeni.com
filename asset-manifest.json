@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/benjaminombeni.com/static/css/main.2d93966c.chunk.css",
-    "main.js": "/benjaminombeni.com/static/js/main.917e3217.chunk.js",
-    "main.js.map": "/benjaminombeni.com/static/js/main.917e3217.chunk.js.map",
+    "main.css": "/benjaminombeni.com/static/css/main.d61cd82f.chunk.css",
+    "main.js": "/benjaminombeni.com/static/js/main.cc679940.chunk.js",
+    "main.js.map": "/benjaminombeni.com/static/js/main.cc679940.chunk.js.map",
     "runtime-main.js": "/benjaminombeni.com/static/js/runtime-main.d280757d.js",
     "runtime-main.js.map": "/benjaminombeni.com/static/js/runtime-main.d280757d.js.map",
-    "static/js/2.2e266a79.chunk.js": "/benjaminombeni.com/static/js/2.2e266a79.chunk.js",
-    "static/js/2.2e266a79.chunk.js.map": "/benjaminombeni.com/static/js/2.2e266a79.chunk.js.map",
+    "static/js/2.d0633d74.chunk.js": "/benjaminombeni.com/static/js/2.d0633d74.chunk.js",
+    "static/js/2.d0633d74.chunk.js.map": "/benjaminombeni.com/static/js/2.d0633d74.chunk.js.map",
     "index.html": "/benjaminombeni.com/index.html",
-    "static/css/main.2d93966c.chunk.css.map": "/benjaminombeni.com/static/css/main.2d93966c.chunk.css.map",
-    "static/js/2.2e266a79.chunk.js.LICENSE.txt": "/benjaminombeni.com/static/js/2.2e266a79.chunk.js.LICENSE.txt",
+    "static/css/main.d61cd82f.chunk.css.map": "/benjaminombeni.com/static/css/main.d61cd82f.chunk.css.map",
+    "static/js/2.d0633d74.chunk.js.LICENSE.txt": "/benjaminombeni.com/static/js/2.d0633d74.chunk.js.LICENSE.txt",
     "static/media/profile.bc7d6ff5.png": "/benjaminombeni.com/static/media/profile.bc7d6ff5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d280757d.js",
-    "static/js/2.2e266a79.chunk.js",
-    "static/css/main.2d93966c.chunk.css",
-    "static/js/main.917e3217.chunk.js"
+    "static/js/2.d0633d74.chunk.js",
+    "static/css/main.d61cd82f.chunk.css",
+    "static/js/main.cc679940.chunk.js"
   ]
 }
