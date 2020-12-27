@@ -15,3 +15,10 @@ export interface ThemeInfo{
     theme: string,
     setTheme: Function
 }
+
+export interface PathDetector{
+    isHome: boolean,
+    isWork: boolean,
+    isInterests: boolean,
+    isResume : boolean
+}

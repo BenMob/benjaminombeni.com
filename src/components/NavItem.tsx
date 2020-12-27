@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link }from 'react-router-dom'
 import '../styles/styles.scss'
 
@@ -7,14 +7,26 @@ import '../styles/styles.scss'
 interface NavItemInfoWithAnimation{
     name: string,
     link: string,
-    animation: Function
+    animation: Function,
+    isLocation: boolean
 }
 
-function NavItem({name, link, animation}: NavItemInfoWithAnimation){
+function NavItem({name, link, animation, isLocation}: NavItemInfoWithAnimation){
+    const [currentPath, setCurrentPath] = useState("");
+    useEffect(() => {
+        if(isLocation){
+            setCurrentPath("current-path");
+            animation();
+        }else{
+            setCurrentPath("");
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isLocation])
+
     return (
-        <Link to={link} onClick={() => animation()} >
+        <Link to={link}>
             <div className="nav-item">
-                <div className="pointer bottom-border-onhover">{name}</div>
+                <div className={`pointer bottom-border-onhover ${currentPath}`}>{name}</div>
             </div>
         </Link>
     )

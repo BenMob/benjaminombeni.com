@@ -1,8 +1,13 @@
 import React from "react";
 import { Project_i } from "../interfaces/Project.i";
 import { MdLink, MdCode } from "react-icons/md";
+import Tool from './Tool'
 
 function Project({id, name, description, source, demo, tools, category}: Project_i): JSX.Element {
+
+    const tools_used = tools?.map(tool => {
+        return <Tool name={tool.name} color={tool.color}/>
+    })
 
     return(
         <div className="project-container">
@@ -13,17 +18,14 @@ function Project({id, name, description, source, demo, tools, category}: Project
                 <small>{description}</small>
             </div>
             <div className="project-links">
-                <div className="project-link-icon"><a href={source}><MdCode /></a></div>
-                <div className="project-link-icon"><a href={source}><MdLink /></a></div>
+                <a href={source}><div className="project-link-icon" data-label="Source"><MdCode /></div></a>
+                <a href={source}><div className="project-link-icon" data-label="Live"><MdLink /></div></a>
             </div>
-            <div className="project-tools">
-                <small>Java</small>
-                <small>Javascript</small>
-                <small>HTML</small>
-                <small>Bootstrap</small>
+            <div className="project-tools wrap">
+               {tools_used}
             </div>
             <div className="category">
-                <small>Category: {category}</small>
+                <small>{category} Project</small>
             </div>
         </div>
     )

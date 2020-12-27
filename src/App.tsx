@@ -8,6 +8,7 @@ import Work from './components/Work';
 import Interests from './components/Interests';
 import { getTheme } from './styles/ThemeProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { pathnames } from "./data/NavBar"
 
 function App() { 
   const [theme, setTheme] = useState(getTheme); // sets the theme
@@ -17,10 +18,10 @@ function App() {
         <div className={`main-container ${theme} globals`}>
           <Navbar theme={theme} setTheme={setTheme} />
           <Switch>
-            <Route path='/benjaminombeni.com' component={Home} exact />
-            <Route path='/' component={Home} exact />
-            <Route path='/work' component={Work} />
-            <Route path='/interests' component={Interests} />
+            <Route path={pathnames.HOME} component={Home} exact />
+            <Route path={pathnames.SLASH} component={Home} exact />
+            <Route path={pathnames.WORK} component={Work} />
+            <Route path={pathnames.INTERESTS} component={Interests} />
           </Switch>
         </div>
       </Router>

@@ -1,19 +1,51 @@
-import React, {useState} from 'react'
-import ThemeToggler from "./ThemeToggler"
-import navbar from "../data/NavBar"
-import NavItem from "./NavItem"
-import { ThemeInfo } from  "../interfaces/NavBar.i"
-import { MdDehaze } from "react-icons/md"
-// import { useLocation } from "react-router-dom"
+import React, {useState, useEffect} from "react";
+import ThemeToggler from "./ThemeToggler";
+import {
+    navbar, pathnames, 
+    path_detector_initializer,
+    isHome,
+    isWork,
+    isInterests,
+    isResume
+} from "../data/NavBar";
+import NavItem from "./NavItem";
+import { ThemeInfo, PathDetector } from  "../interfaces/NavBar.i";
+import { MdDehaze } from "react-icons/md";
+import { useLocation } from "react-router-dom";
 
 const expanded = "navigation-bar-expanded" // Represents the CSS class containing the animation that expands the navigation bar.
 const shrunk = "navigation-bar-shrunk"     // Represents the CSS class containing the animation that shrinks the navigation bar.
 const show_side_nav = "show-side-nav"      // Represents the CSS class containing the animation that slides the sidebar in from the left.
 const hide_side_nav = "hide-side-nav"      // Represents the CSS class containing the animation that slides the sidebar out to the left.
-  
+
 function Navbar({theme, setTheme}: ThemeInfo){
     const [navState, setNavState] = useState<string>(expanded)               // Controls the state of the navbar on all screens.
     const [sideBarState, setSideBarSate] = useState<string>(hide_side_nav)   // Controls the state of the sidenav on small screens only.
+    const [path_detector, setPathDetector] = useState<PathDetector>(path_detector_initializer)
+    const location = useLocation();
+
+    useEffect(() => {
+        const updatePathDetector = () => {
+            switch (location.pathname) {
+                case pathnames.SLASH:
+                    setPathDetector(isHome);
+                    break;
+                case pathnames.WORK:
+                    setPathDetector(isWork);
+                    break;
+                case pathnames.INTERESTS:
+                    setPathDetector(isInterests);
+                    break;
+                case pathnames.RESUME:
+                    setPathDetector(isResume);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        updatePathDetector();
+    }, [location]);
    
     // Changes the state of the navigation bar from expanded to shrunk. 
     const shrink = ():void => {
@@ -61,10 +93,10 @@ function Navbar({theme, setTheme}: ThemeInfo){
             <div className="flex-space-between">
                 <MdDehaze className="humberger pointer" onClick={toggleSideBar} />
                 <div className={`nav-items ${sideBarState}`}>
-                    <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} />
-                    <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} />
-                    <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} />
-                    <NavItem name={navbar.resume.name} link={navbar.resume.link} animation={expand} /> 
+                    <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} isLocation={path_detector.isHome} />
+                    <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} isLocation={path_detector.isWork} />
+                    <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} isLocation={path_detector.isInterests} />
+                    <NavItem name={navbar.resume.name} link={navbar.resume.link} animation={expand} isLocation={path_detector.isResume} /> 
                 </div>
                 <div className="theme-toggler">
                     <ThemeToggler theme={theme} setTheme={setTheme} />
