@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/benjaminombeni.com/static/css/main.d61cd82f.chunk.css",
-    "main.js": "/benjaminombeni.com/static/js/main.f9838099.chunk.js",
-    "main.js.map": "/benjaminombeni.com/static/js/main.f9838099.chunk.js.map",
+    "main.js": "/benjaminombeni.com/static/js/main.7a04cdf7.chunk.js",
+    "main.js.map": "/benjaminombeni.com/static/js/main.7a04cdf7.chunk.js.map",
     "runtime-main.js": "/benjaminombeni.com/static/js/runtime-main.d280757d.js",
     "runtime-main.js.map": "/benjaminombeni.com/static/js/runtime-main.d280757d.js.map",
     "static/js/2.3bac37ed.chunk.js": "/benjaminombeni.com/static/js/2.3bac37ed.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d280757d.js",
     "static/js/2.3bac37ed.chunk.js",
     "static/css/main.d61cd82f.chunk.css",
-    "static/js/main.f9838099.chunk.js"
+    "static/js/main.7a04cdf7.chunk.js"
   ]
 }
