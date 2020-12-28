@@ -1,10 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import { Project_i } from "../interfaces/Project.i";
 import { MdLink, MdCode } from "react-icons/md";
 import Tool from './Tool'
 
 function Project({id, name, description, source, demo, tools, category}: Project_i): JSX.Element {
+    
+    // eslint-disable-next-line
+    const [sourceAvailable, setSourceAvailable] = useState<boolean | undefined>(typeof source === typeof "string");
+    // eslint-disable-next-line
+    const [demoAvailable, setDemoAvailable] = useState<boolean | undefined>(typeof demo === typeof "string");
+    
+    // Renders the link to the source code of the project.
+    const renderSource = (): JSX.Element => {
+        return <a href={source}><div className="project-link-icon" data-label="Source"><MdCode /></div></a>
+    }
 
+    // Renders the link to the demo/live version of the project.
+    const renderDemo = (): JSX.Element => {
+        return <a href={source}><div className="project-link-icon" data-label="Live"><MdLink /></div></a>
+    }
+
+    // Create Tool components
     const tools_used = tools?.map(tool => {
         return <Tool name={tool.name} color={tool.color}/>
     })
@@ -18,8 +34,8 @@ function Project({id, name, description, source, demo, tools, category}: Project
                 <small>{description}</small>
             </div>
             <div className="project-links">
-                <a href={source}><div className="project-link-icon" data-label="Source"><MdCode /></div></a>
-                <a href={source}><div className="project-link-icon" data-label="Live"><MdLink /></div></a>
+                {sourceAvailable && renderSource()}
+                {demoAvailable && renderDemo()}
             </div>
             <div className="project-tools wrap">
                {tools_used}

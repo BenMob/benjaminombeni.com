@@ -11,8 +11,8 @@
      id: number,
      name: string,
      description: string,
-     source: string,
-     demo: string | null,
+     source: string | undefined,
+     demo: string | undefined,
      tools: Array<Tool_i> | null,
      category: string
  }
