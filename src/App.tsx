@@ -15,7 +15,7 @@ function App() {
  //<Route path={pathnames.HOME}  component={Home} exact />
   return (
     
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className={`main-container ${theme} globals`}>
           <Navbar theme={theme} setTheme={setTheme} />
           <Switch>
