@@ -2,6 +2,7 @@
 *{
     padding: 0;
     margin: 0;
+    transition: 0.1s;
 }
 
 a{
@@ -66,10 +67,13 @@ body{
     align-items: center;
 }
 
+.close_navbar{
+    display: none;
+}
+
 /* Expanded Navigation bar*/
 .navigation-bar-expanded{
-    border-bottom: 2px solid var(--navbar-border-bottom);
-    position: sticky;
+    border-bottom: 2px solid gray;
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
     height: 40vh;
     animation: expand_navigation_bar 0.5s 1 normal forwards ease;
@@ -80,8 +84,7 @@ body{
 
 /*  Shrink navigation bar*/
 .navigation-bar-shrunk{
-    border-bottom: 2px solid var(--navbar-border-bottom);
-    position: sticky;
+    border-bottom: 2px solid gray;
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
     height: 7vh;
     animation: shrink_navigation_bar 0.5s 1 normal forwards;
@@ -117,29 +120,35 @@ body{
 
 .nav-item{
     margin: var(--lg);
+    padding-left: var(--md);
+    padding-right: var(--md);
     color: var(--text-color);
+    border-radius: var(--md) var(--md) 0 0;
+}
+
+.nav-item:hover{
+    border-bottom: solid 2px gray;
 }
 
 .nav-item:active{
-    color: var(--light-blue);
+    color: gray;
 }
 
-.humberger{
+.hamberger{
    display: none;
    position: absolute;
-   left: 0;
+   right: 0;
    top: 0;
    margin: var(--lg);
-   color: var(--navbar-border-bottom);
+   color: gray;
    font-size: var(--xxl);
 }
 
 .theme-toggler{
     position: absolute;
-    right: 0;
-    top: 0;
-    margin-right: var(--xl);
-    margin-top: var(--lg);
+    left: var(--lg);
+    top: var(--lg);
+    margin: var(--md);
 }
 
 .sun{
@@ -164,7 +173,7 @@ body{
     visibility: hidden;
     border-radius: 50%;
     width: 100px;
-    border: solid 2px var(--navbar-border-bottom);
+    border: solid 2px gray;
     box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
     animation: expand_portrait 0.5s 0.2s 1  normal forwards ease-in;  // name time func delay iteration dir fill play
 }
@@ -182,7 +191,6 @@ body{
 /************** Home Styling *************/
 .home-wrapper{      // Wraps the content of the Home page
     min-height: 59vh;  
-    // background: linear-gradient(var(--black),var(--page-bg-color));
     display: flex;  
 }
 
@@ -255,10 +263,6 @@ body{
     display: flex;
 }
 
-.hide{
-    display: none;
-}
-
 .wrap{
     flex-wrap: wrap;
 }
@@ -268,12 +272,11 @@ body{
 }
 
 .current-path{
-    border-bottom: solid 2px var(--navbar-border-bottom);
+    border-bottom: solid 2px gray;
+    background-color: var(--shadow-gray);
 }
 
-.bottom-border-onhover:hover{
-    border-bottom: solid 2px var(--navbar-border-bottom);
-}
+
 
 /****************************** Projects Section *****************************/
 .projects-wrapper{
@@ -347,14 +350,11 @@ body{
 }
 
 .project-link-icon:hover{
-   border-bottom: solid 2px var(--navbar-border-bottom);
+   border-bottom: solid 2px gray
 }
 
 .footer{
-    position: absolute;
-    bottom: 0;
-    right: var(--md);
-    font-size: var(--lg);
+    background-color: var(--shadow-gray);
 }
 
 /****************************************************** Styles For Mobile Devices ******************************/
@@ -362,35 +362,53 @@ body{
 @media (max-width: 576px) {
     .nav-items{
         flex-direction: column;
-        align-items: flex-start;
-        border-right: solid 2px var(--navbar-border-bottom);
+        align-items: center;
         position: absolute;
-        top: 7vh;
-        left: -100px;
+        top: 0;
+        left: -100vh;
         background-color: var(--page-bg-color);
+        border-bottom: solid 2px gray;
         padding: var(--md);
-        height: 32vh;
+        height: 39vh;
+        width: 100vw;
     }
 
-    .humberger{
+    .hidden{
+        display: none;
+    }
+
+    .hamberger{
         display: block;
+    }
+
+    .close_navbar{
+        display: flex;
+        position: absolute;
+        right: var(--xxl);
+        top: var(--md);
+        color: gray;
+        font-size: var(--xxl);
     }
 
     @keyframes slide_in_from_left{
         from{
-            left: -100px;
+            left: -110vw;
+            display: none;
         }
         to{
             left: 0;
+            display: flex;
         }
     }
 
     @keyframes slide_out_from_left{
         from{
             left: 0;
+            display: flex;
         }
         to{
-            left: -100;
+            left: -110vw;
+            display: none;
         }
     }
 
@@ -400,15 +418,6 @@ body{
     
     .hide-side-nav{
         animation: slide_out_from_left 0.5s 1 normal forwards ease;
-    }
-
-
-    .portrait{
-        border-radius: 50%;
-        width: 100px;
-        border: solid 2px var(--navbar-border-bottom);
-        box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
-       
     }
 
     /* Expanded Navigation bar*/
@@ -422,7 +431,7 @@ body{
     
     /*  Shrink navigation bar*/
     .navigation-bar-shrunk{
-        border-bottom: 2px solid var(--navbar-border-bottom);
+        border-bottom: 2px solid gray;
         position: sticky;
         box-shadow: 0px 2px 10px 1px var(--navbar-shadow-color);
         height: 7vh;

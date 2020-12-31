@@ -10,10 +10,11 @@ interface NavItemInfoWithAnimation{
     name: string,
     link: string,
     animation: Function,
+    toggleSideNav: Function,
     isLocation: boolean
 }
 
-function NavItem({name, link, animation, isLocation}: NavItemInfoWithAnimation){
+function NavItem({name, link, animation, toggleSideNav, isLocation}: NavItemInfoWithAnimation){
     const [currentPath, setCurrentPath] = useState("");
     useEffect(() => {
         if(isLocation){
@@ -36,9 +37,9 @@ function NavItem({name, link, animation, isLocation}: NavItemInfoWithAnimation){
 
     // Renders the nav item path
     return (
-        <Link to={link}>
-            <div className="nav-item">
-                <div className={`pointer bottom-border-onhover ${currentPath}`}>{name}</div>
+        <Link to={link} onClick={() => toggleSideNav()}>
+            <div className={`nav-item bottom-border-onhover ${currentPath}`}>
+                <div className={"pointer "}>{name}</div>
             </div>
         </Link>
     )  

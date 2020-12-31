@@ -34,9 +34,6 @@ function Tool({name, color}: Tool_i): JSX.Element{
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-   
-
-
     const style = {
         color : `${text_color}`,
         borderRadius: '2px',

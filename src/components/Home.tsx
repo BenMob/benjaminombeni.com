@@ -17,7 +17,6 @@ function Home(): JSX.Element {
                 </div>
             </div>
             <div className="flex-center flex-1" >
-                <small>My Projects - </small>
                 <Link to={navbar.work.link} >
                     <div className="laptop pointer" >&#128187;</div>
                 </Link>

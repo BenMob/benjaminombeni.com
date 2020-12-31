@@ -17,10 +17,11 @@ const expanded = "navigation-bar-expanded" // Represents the CSS class containin
 const shrunk = "navigation-bar-shrunk"     // Represents the CSS class containing the animation that shrinks the navigation bar.
 const show_side_nav = "show-side-nav"      // Represents the CSS class containing the animation that slides the sidebar in from the left.
 const hide_side_nav = "hide-side-nav"      // Represents the CSS class containing the animation that slides the sidebar out to the left.
+const hidden = "hidden"
 
 function Navbar({theme, setTheme}: ThemeInfo){
     const [navState, setNavState] = useState<string>(expanded)               // Controls the state of the navbar on all screens.
-    const [sideBarState, setSideBarSate] = useState<string>(hide_side_nav)   // Controls the state of the sidenav on small screens only.
+    const [sideBarState, setSideBarSate] = useState<string>(hidden)   // Controls the state of the sidenav on small screens only.
     const [path_detector, setPathDetector] = useState<PathDetector>(path_detector_initializer)
     const location = useLocation();
 
@@ -66,7 +67,7 @@ function Navbar({theme, setTheme}: ThemeInfo){
     }
 
     // Toggles the sidebar from visible to invisible and vice versa
-    const toggleSideBar = ():void => {
+    const toggleSideNav = ():void => {
         if(sideBarState === hide_side_nav){
             setSideBarSate(show_side_nav)
         }else{
@@ -91,12 +92,13 @@ function Navbar({theme, setTheme}: ThemeInfo){
                 {navState === shrunk && initials(navbar.initials.name)}
             </div>
             <div className="flex-space-between">
-                <MdDehaze className="humberger pointer" onClick={toggleSideBar} />
+                <MdDehaze className="hamberger pointer" onClick={toggleSideNav} />
                 <div className={`nav-items ${sideBarState}`}>
-                    <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} isLocation={path_detector.isHome} />
-                    <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} isLocation={path_detector.isWork} />
-                    <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} isLocation={path_detector.isInterests} />
-                    <NavItem name={navbar.resume.name} link={navbar.resume.link} animation={expand} isLocation={path_detector.isResume} /> 
+                    <div className="close_navbar pointer" onClick={toggleSideNav}>x</div>
+                    <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} toggleSideNav={toggleSideNav} isLocation={path_detector.isHome} />
+                    <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} toggleSideNav={toggleSideNav} isLocation={path_detector.isWork} />
+                    <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} toggleSideNav={toggleSideNav} isLocation={path_detector.isInterests} />
+                    <NavItem name={navbar.resume.name} link={navbar.resume.link} animation={expand} toggleSideNav={toggleSideNav} isLocation={path_detector.isResume} /> 
                 </div>
                 <div className="theme-toggler">
                     <ThemeToggler theme={theme} setTheme={setTheme} />
