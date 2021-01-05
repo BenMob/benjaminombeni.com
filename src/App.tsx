@@ -13,8 +13,7 @@ import { pathnames } from "./data/NavBar"
 function App() { 
   const [theme, setTheme] = useState(getTheme); // sets the theme
   return (
-    
-      <Router>
+      <Router base-name="/benjaminombeni.com">
         <div className={`main-container ${theme} globals`}>
           <Navbar theme={theme} setTheme={setTheme} />
           <Switch>
