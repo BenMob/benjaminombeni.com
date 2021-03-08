@@ -16,6 +16,7 @@ interface NavItemInfoWithAnimation{
 
 function NavItem({name, link, animation, toggleSideNav, isLocation}: NavItemInfoWithAnimation){
     const [currentPath, setCurrentPath] = useState("");
+
     useEffect(() => {
         if(isLocation){
             setCurrentPath("current-path");
@@ -30,7 +31,7 @@ function NavItem({name, link, animation, toggleSideNav, isLocation}: NavItemInfo
     if(name === navbar.resume.name){
         return (
             <div className="nav-item">
-                <a href={resume} target="_blank" rel="noreferrer"  className={`pointer bottom-border-onhover ${currentPath}`}>{name}</a>
+                <a href = {resume} target = "_blank" rel = "noreferrer" className = {`pointer bottom-border-onhover ${currentPath}`}>{name}</a>
             </div> 
         )
     }

@@ -21,8 +21,8 @@ const hidden = "hidden"
 
 function Navbar({theme, setTheme}: ThemeInfo){
     const [navState, setNavState] = useState<string>(expanded)               // Controls the state of the navbar on all screens.
-    const [sideBarState, setSideBarSate] = useState<string>(hidden)   // Controls the state of the sidenav on small screens only.
-    const [path_detector, setPathDetector] = useState<PathDetector>(path_detector_initializer)
+    const [sideBarState, setSideBarSate] = useState<string>(hidden)          // Controls the state of the sidenav on small screens only.
+    const [path_detector, setPathDetector] = useState<PathDetector>(path_detector_initializer)   
     const location = useLocation();
 
     useEffect(() => {
@@ -97,7 +97,6 @@ function Navbar({theme, setTheme}: ThemeInfo){
                     <div className="close_navbar pointer" onClick={toggleSideNav}>x</div>
                     <NavItem name={navbar.home.name} link={navbar.home.link} animation={expand} toggleSideNav={toggleSideNav} isLocation={path_detector.isHome} />
                     <NavItem name={navbar.work.name} link={navbar.work.link} animation={shrink} toggleSideNav={toggleSideNav} isLocation={path_detector.isWork} />
-                    <NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} toggleSideNav={toggleSideNav} isLocation={path_detector.isInterests} />
                     <NavItem name={navbar.resume.name} link={navbar.resume.link} animation={expand} toggleSideNav={toggleSideNav} isLocation={path_detector.isResume} /> 
                 </div>
                 <div className="theme-toggler">
@@ -109,3 +108,5 @@ function Navbar({theme, setTheme}: ThemeInfo){
 }
 
 export default Navbar
+
+ /*<NavItem name={navbar.interests.name} link={navbar.interests.link} animation={shrink} toggleSideNav={toggleSideNav} isLocation={path_detector.isInterests} />*/

@@ -4,7 +4,7 @@ import './styles/styles.scss';
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import Work from './components/Work';
-import Interests from './components/Interests';
+// import Interests from './components/Interests';
 import { getTheme } from './styles/ThemeProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { pathnames } from "./data/NavBar"
@@ -19,11 +19,22 @@ function App() {
           <Switch>
             <Route path={pathnames.SLASH} component={Home} exact />
             <Route path={pathnames.WORK} component={Work} />
-            <Route path={pathnames.INTERESTS} component={Interests} />
+          
+            <Route component={NotFound}/>
           </Switch>
         </div>
       </Router>
   )
 }
+
+const NotFound = (): JSX.Element => {
+  return(
+    <div className={"NotFound"}>
+      <h1>Page Not Found!</h1>
+    </div>
+  )
+}
+
+/*<Route path={pathnames.INTERESTS} component={Interests} />*/
 
 export default App;

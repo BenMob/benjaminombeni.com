@@ -14,7 +14,7 @@ function Tool({name, color}: Tool_i): JSX.Element{
 
     useEffect(() => {
          // Makes sure bright/dark colors don't blind in with the text
-        const handleColorBlinding = (): void => {
+        const handleColorBinding = (): void => {
             switch (color) {
                 case colors.JavaScript:
                     setTextColor("#000000")
@@ -30,7 +30,7 @@ function Tool({name, color}: Tool_i): JSX.Element{
         }
 
         // Call the handleColorBlinding right when the components mounts
-        handleColorBlinding()
+        handleColorBinding()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

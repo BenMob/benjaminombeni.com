@@ -60,6 +60,12 @@ body{
     flex-direction: column;
 }
 
+.NotFound{
+    padding: 10em;
+    display: flex;
+    align-self: center;
+}
+
 /* nav-items-container */
 .nav-items{
     display: flex;
@@ -458,4 +464,5 @@ body{
             max-width: none;
         }
 }
+
 
