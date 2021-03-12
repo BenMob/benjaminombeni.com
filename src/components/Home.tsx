@@ -3,6 +3,7 @@ import { SocialIcon } from 'react-social-icons';
 import { navbar } from '../data/NavBar';
 import { Link } from 'react-router-dom';
 
+
 function Home(): JSX.Element {
     return (
         <div className='home-wrapper'>

@@ -4,11 +4,13 @@ import './styles/styles.scss';
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import Work from './components/Work';
+import Footer from "./components/Footer";
 // import Interests from './components/Interests';
 import { getTheme } from './styles/ThemeProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { pathnames } from "./data/NavBar"
 // import Footer from './components/Footer'
+
 
 function App() { 
   const [theme, setTheme] = useState(getTheme); // sets the theme
@@ -19,11 +21,12 @@ function App() {
           <Switch>
             <Route path={pathnames.SLASH} component={Home} exact />
             <Route path={pathnames.WORK} component={Work} />
-          
             <Route component={NotFound}/>
           </Switch>
+          <Footer />
         </div>
       </Router>
+      
   )
 }
 

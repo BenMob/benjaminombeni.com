@@ -4,7 +4,26 @@
 
 import colors from '../data/tools_colors.json'
 
-export const cards_cast_tools = [
+export const mips_converter_tools = [
+    {
+        name: "HTML",
+        color: colors.HTML
+    }, 
+    {
+        name: "CSS",
+        color: colors.CSS
+    },
+    {
+        name: "JavaScript",
+        color: colors.JavaScript
+    },
+    {
+        name: "TypeScript",
+        color: colors.TypeScript
+    }
+]
+
+export const csusm_dsc_website_tools = [
     {
         name: "HTML",
         color: colors.HTML
@@ -13,13 +32,6 @@ export const cards_cast_tools = [
         name: "CSS",
         color: colors.CSS
     },
-    {
-        name: "JavaScript",
-        color: colors.JavaScript
-    }
-]
-
-export const lm_video_tour_tools = [
     {
         name: "JavaScript",
         color: colors.JavaScript

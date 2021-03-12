@@ -51,4 +51,4 @@ function useWindowSize(): WindowSize{
     return size   // Finally return the size of the window.
 }
 
-export default useWindowSize;
+export default useWindowSize; 

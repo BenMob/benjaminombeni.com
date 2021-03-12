@@ -6,18 +6,18 @@ import Tool from './Tool'
 function Project({id, name, description, source, demo, tools, category}: Project_i): JSX.Element {
     
     // eslint-disable-next-line
-    const [sourceAvailable, setSourceAvailable] = useState<boolean | undefined>(typeof source === typeof "string");
+    const [sourceAvailable, setSourceAvailable] = useState<boolean | undefined>(source != undefined && source != "");
     // eslint-disable-next-line
-    const [demoAvailable, setDemoAvailable] = useState<boolean | undefined>(typeof demo === typeof "string");
+    const [demoAvailable, setDemoAvailable] = useState<boolean | undefined>(demo != undefined && demo != "");
     
     // Renders the link to the source code of the project.
     const renderSource = (): JSX.Element => {
-        return <a href={source}><div className="project-link-icon" data-label="Source"><MdCode /></div></a>
+        return <a href={source}><div className="project-link-icon blank" data-label="Source"><MdCode /></div></a>
     }
 
     // Renders the link to the demo/live version of the project.
     const renderDemo = (): JSX.Element => {
-        return <a href={source}><div className="project-link-icon" data-label="Live"><MdLink /></div></a>
+        return <a href={demo}><div className="project-link-icon" data-label="Live"><MdLink /></div></a>
     }
 
     // Create Tool components

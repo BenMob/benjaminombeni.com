@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name":"Mips-Converter",
+        "description": "A web application that converts simple Mips Assembly instructions into machine code.",
+        "source": "https://github.com/BenMob/Mips_Converter",
+        "demo": "https://mips-converter.herokuapp.com/",
+        "tools": [
+            {
+                "name":"HTML",
+                "color": "HTML"
+            },
+            {
+                "name":"CSS",
+                "color": "CSS"
+            },
+            {
+                "name":"JavaScript",
+                "color": "JavaScript"
+            },
+            {
+                "name":"TypeScript",
+                "color": "TypeScript"
+            }
+        ],
+        "category": "personal"
+    },
+    {
+        "id": 2,
+        "name":"DSC-CSUSM Website",
+        "description": "The Official Website of the Developper Student Clubs at CSUSM.",
+        "source": "https://github.com/BenMob/csusm-dsc-website",
+        "demo": "https://dsc2020-290203.wl.r.appspot.com/",
+        "tools": [
+            {
+                "name":"HTML",
+                "color": "HTML"
+            },
+            {
+                "name":"CSS",
+                "color": "CSS"
+            },
+            {
+                "name":"JavaScript",
+                "color":"JavaScipt"
+            }
+        ],
+        "category": "personal"
+    }
+]

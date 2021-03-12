@@ -361,9 +361,26 @@ body{
 
 .footer{
     background-color: var(--shadow-gray);
+    border-top: solid 1px var(--navbar-shadow-color);
+    padding: var(--lg);
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
+}
+
+.footer-link{
+    border-bottom: solid 1px var(--text-color);
 }
 
 /****************************************************** Styles For Mobile Devices ******************************/
+
+@media (max-width: 860px) {
+    .footer{
+        display: none;
+    }
+}
 // MediaQueries:  Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
     .nav-items{
@@ -455,6 +472,10 @@ body{
 
     .home-about {
         text-align: center;
+    }
+
+    .footer{
+      display: none;
     }
 }
 

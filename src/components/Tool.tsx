@@ -38,6 +38,7 @@ function Tool({name, color}: Tool_i): JSX.Element{
         color : `${text_color}`,
         borderRadius: '2px',
         padding: '2px',
+        margin: '2px',
         backgroundColor: `${color}`
     }
 
